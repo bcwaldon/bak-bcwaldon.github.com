@@ -27,21 +27,17 @@ p {
 
 a {
   color: #00a;
+  text-decoration: none;
+  color: inherit;
 }
 
 a:hover {
-  color: black;
+  color: inherit;
 }
 
 a:visited {
-  color: #a0a;
+  color: inherit;
 }
-
-table {
-  font-size: inherit;
-  font: 100%;
-}
-
 
 div.container {
     text-align: justify;
@@ -82,14 +78,19 @@ ul.posts {
     padding: 0 0 0 0;
 }
 
-.post div.title a {
-    text-decoration: none;
-    color: inherit;
-}
-
 .post div.content {
     margin: 0 0 0 0;
     padding: 0 0 0 0;
+}
+
+.post ul, .post ol {
+
+    margin-left: 20px;
+}
+
+.post h3 {
+    margin: 15px 0 0 0;
+
 }
 
 .post pre {
@@ -101,7 +102,7 @@ ul.posts {
 .post code {
     border: 1px solid #ddd;
     background-color: #eef;
-    font-size: 85%;
+    font-size: 90%;
     padding: 0 .2em;
 }
 
@@ -118,9 +119,3 @@ div.footer {
 div.footer span.spacer{
     color: #CCC;
 }
-
-div.footer a {
-    text-decoration: none;
-    color: inherit;
-}
-
