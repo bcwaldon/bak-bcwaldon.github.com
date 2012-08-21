@@ -24,7 +24,7 @@ The new client does maintain 100% CLI compatibility for interactions with the v1
 
 Version 2.0 of the OpenStack Images API is largely defined based on the work that was finished in the Folsom release of Glance. Expect a separate post covering the v2.0 API spec itself.
 
-I wanted to specifically thank Mark Washenberger, Alex Meade, and Iccha Sethi of Rackspace for their outstanding work on the v2.0 API implementation!
+I wanted to specifically thank Mark Washenberger, Alex Meade, Iccha Sethi and Nikhil Komawar of Rackspace for their outstanding work on the v2.0 API implementation!
 
 See the [super-blueprint on launchpad](https://blueprints.launchpad.net/glance/+spec/api-2).
 
