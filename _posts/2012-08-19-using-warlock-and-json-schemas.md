@@ -11,7 +11,7 @@ tags:
 ---
 The `warlock` [python library](http://github.com/bcwaldon/warlock) was created out of a need to interact with [JSON schemas](http://json-schema.org) in a pythonic way. It is designed to generate self-validating python classes that conform to a JSON schema definition.
 
-###Installing warlock
+## Installing warlock
 
 Install it on Ubuntu 12.10:
 
@@ -27,7 +27,7 @@ Pull it from GitHub:
     $ cd warlock/
     $ python setup.py install
 
-###Using warlock v0.4.0
+## Using warlock v0.4.0
 
 The first thing you'll need is a JSON schema. The following is a simple example, but warlock can support any valid JSON schema you throw at it:
 
@@ -95,7 +95,7 @@ The `changes` attribute of your model instance returns a dictionary containing o
     >>> norway.changes
     {'population': 5013000}
 
-###Client-side magic
+## Client-side magic
 
 The use case that drove the creation of warlock was to be able to automagically verify client-side modifications to an entity before sending it back to a REST-like API. The [python client](http://github.com/openstack/python-glanceclient) we provide for v2 of the OpenStack Images API downloads a JSON schema and createa a warlock model representing a virtual image. The following shows how a user can download and modify an image using that python library:
 
@@ -127,7 +127,7 @@ The actual `glanceclient` code to fetch and update the image using `warlock` is 
     def update(image):
         http.update_image(image.changes)
 
-###Future of warlock
+## Future of warlock
 
 There are a couple of major things on my wishlist at the moment:
 

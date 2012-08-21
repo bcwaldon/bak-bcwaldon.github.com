@@ -21,22 +21,15 @@ h1 {
   margin-bottom: 1em;
 }
 
-p {
-  margin: 1em 0;
-}
-
-a {
-  color: #00a;
+a, a:hover, a:visited {
+  color: inherit;
   text-decoration: none;
   color: inherit;
 }
 
-a:hover {
-  color: inherit;
-}
-
-a:visited {
-  color: inherit;
+p {
+  margin: 8px 0;
+  text-align: left;
 }
 
 div.container {
@@ -83,14 +76,30 @@ ul.posts {
     padding: 0 0 0 0;
 }
 
+.post div.content a {
+  color: #4183C4;
+}
+.post div.content a:hover {
+  color: #4183C4;
+}
+.post div.content a:visited {
+  color: #4183C4;
+}
+
+
 .post ul, .post ol {
 
     margin-left: 20px;
 }
 
-.post h3 {
+.post h2 {
     margin: 15px 0 0 0;
+    font-size: 16px;
+}
 
+.post h3 {
+    margin: 10px 0 0 0;
+    font-size: 13px;
 }
 
 .post pre {
