@@ -1,7 +1,11 @@
 ---
 layout: post
 title: OpenStack Folsom & Glance
-tags: openstack, folsom, glance, images-api
+tags:
+  - openstack
+  - folsom
+  - glance
+  - images-api
 
 ---
 As we are coming up on the Folsom OpenStack release, I thought it would be a good idea to cover what landed in Glance over the last several months. It is becoming increasingly difficult to keep up with all of our projects, so I hope this overview helps!

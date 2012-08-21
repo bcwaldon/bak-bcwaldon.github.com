@@ -1,0 +1,6 @@
+<ul class='posts'>
+{% for post in posts %}
+    {% assign post_content = post.content %}
+    {% include post.html %}
+{% endfor %}
+</ul>
