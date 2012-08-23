@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Using Warlock & JSON Schemas
+title: Using Warlock &amp; JSON Schemas
 tags:
 - warlock
 - python

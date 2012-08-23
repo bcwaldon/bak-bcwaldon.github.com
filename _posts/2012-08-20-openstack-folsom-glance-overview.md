@@ -1,6 +1,6 @@
 ---
 layout: post
-title: OpenStack Folsom & Glance
+title: OpenStack Folsom &amp; Glance
 tags:
   - openstack
   - folsom
