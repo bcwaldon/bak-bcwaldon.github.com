@@ -14,7 +14,7 @@
       <title>{{ post.title }}</title>
       <link>{{ site.url }}{{ post.url }}</link>
       <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
-      <author>Brian Waldon &lt;bcwaldon@gmail.com&gt;</author>
+      <author>bcwaldon@gmail.com (Brian Waldon)</author>
       <guid>{{ site.url }}{{ post.id }}</guid>
       <description>{{ post.content | xml_escape }}</description>
     </item>
