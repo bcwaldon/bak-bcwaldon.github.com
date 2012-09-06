@@ -138,7 +138,8 @@ Run `glance-manage db_sync` to upgrade your database - it should end up at versi
 
     $ glance-manage db_sync
     2012-09-06 00:14:20     INFO [migrate.versioning.api] 13 -> 14... 
-    2012-09-06 00:14:20     INFO [glance.db.sqlalchemy.migrate_repo.schema] creating table image_tags
+    2012-09-06 00:14:20     INFO [glance.db.sqlalchemy.migrate_repo.schema] creating
+    table image_tags
     2012-09-06 00:14:20     INFO [migrate.versioning.api] done
     2012-09-06 00:14:20     INFO [migrate.versioning.api] 14 -> 15... 
     2012-09-06 00:14:20     INFO [migrate.versioning.api] done
