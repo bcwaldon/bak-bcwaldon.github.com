@@ -10,6 +10,8 @@ tags:
 ---
 As we are coming up on the Folsom OpenStack release, I thought it would be a good idea to cover what landed in Glance over the last several months. It is becoming increasingly difficult to keep up with all of our projects, so I hope this overview helps!
 
+**Update 2012-09-12:** Updated High-Profile Bugs to reflect bugs fixed in folsom-rc1
+
 ## Python Client Rewrite
 
 A new client library, [python-glanceclient](http://github.com/openstack/python-glanceclient), was created during the Folsom release cycle to replace the client that currently lives in the Glance repository. This new client has already been integrated into Nova, Cinder, Horizon and Devstack.
@@ -24,7 +26,9 @@ The new client does maintain 100% CLI compatibility for interactions with the v1
 
 Version 2.0 of the OpenStack Images API is largely defined based on the work that was finished in the Folsom release of Glance. Expect a separate post covering the v2.0 API spec itself.
 
-I wanted to specifically thank Mark Washenberger, Alex Meade, Iccha Sethi and Nikhil Komawar of Rackspace for their outstanding work on the v2.0 API implementation!
+Two new configuration options were added to control the availability of specific API versions: enable_v1_api and enable_v2_api. These are boolean flags that control whether an API should be deployed with glance-api. If you want to prevent users from accessing the new v2 API, just set enable_v2_api to False (it defaults to True).
+
+I want to specifically thank Mark Washenberger, Alex Meade, Iccha Sethi and Nikhil Komawar of Rackspace for their outstanding work on the v2.0 API implementation!
 
 See the [super-blueprint on launchpad](https://blueprints.launchpad.net/glance/+spec/api-2).
 
@@ -41,6 +45,7 @@ Features are always awesome, but the biggest request of the OpenStack community 
 * [979745](https://bugs.launchpad.net/glance/+bug/979745): Actually delete images from swift when using Keystone authentication.
 * [1002791](https://bugs.launchpad.net/glance/+bug/1002791): Replace usage of `swift.client` with `swiftclient` - swift dependency replaced with python-swiftclient.
 * [994296](https://bugs.launchpad.net/glance/+bug/994296): Allow swift account name to contain the '@' character.
+* [997658](https://bugs.launchpad.net/glance/+bug/997658): S3 store backend now works with Swift's S3 compatibility middleware (Swift3) - use s3_store_bucket_url_format=path.
 
 ### SSL
 
@@ -49,13 +54,21 @@ Features are always awesome, but the biggest request of the OpenStack community 
 
 ### Database
 
+
 * [1012823](https://bugs.launchpad.net/glance/+bug/1012823): Prevent database auto-creation - configurable using `db_auto_create` config option.
-* [975651](https://bugs.launchpad.net/ubuntu/+source/glance/+bug/975651): Update all image id references in db migration 12; image properties were being ignored.
+* [975651](https://bugs.launchpad.net/glance/+bug/975651): Update all image id references in db migration 12; image properties were being ignored.
+
+### Policy
+
+* [1036193](https://bugs.launchpad.net/glance/+bug/1036193): New image policy added to cover downloading image data: 'download_image'.
+* [1043482](https://bugs.launchpad.net/glance/+bug/1043482): Missing policy files don't cause server to crash - a default set of rules is now used instead.
 
 ### Miscellaneous
 
 * [1038994](https://bugs.launchpad.net/glance/+bug/1038994): Maximum image size is now configurable using `image_size_cap` (default 1 TB) and chunked transfer-encoding HTTP requests are now properly validated.
-* [978130](https://bugs.launchpad.net/glance/+bug/978130): Multiprocess-enabled servers now respect CTRL+C.
+* [978130](https://bugs.launchpad.net/glance/+bug/978130), [1042823](https://bugs.launchpad.net/glance/+bug/1042823): Multiprocess-enabled servers now respect SIGINT and SIGHUP
+* [1036193](https://bugs.launchpad.net/glance/+bug/1036193): Individual workers now get a personal database connection rather than sharing one.
+* [1019421](https://bugs.launchpad.net/glance/+bug/1019421): Glance will clean up partially stored images if filesystem fills up - only applies to the filesystem store driver.
 * [1031842](https://bugs.launchpad.net/glance/+bug/1031842): Partially-cached images are removed when a client connection is prematurely closed.
 * [1021054](https://bugs.launchpad.net/glance/+bug/1021054), [1021740](https://bugs.launchpad.net/glance/+bug/1021740): Admins can now share images regardless of ownership or existing sharing permissions.
 
