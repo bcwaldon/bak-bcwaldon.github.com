@@ -18,27 +18,27 @@ The Glance team has a lot to tackle during the next release cycle. The major pie
 
 In the interest of being more flexible with the storage locations of image data, Glance will allow users to provide several sources of image data for a single image record. An example use case would be for a cloud operator to dump a high-traffic image on an ephemeral volume for quick cloning at boot time, but keep a copy in a more persistent data store such as Swift in the case that the volume is lost.
 
-- https://blueprints.launchpad.net/glance/+spec/multiple-image-locations
-- https://etherpad.openstack.org/GrizzlyMultipleImageLocations
+- <https://blueprints.launchpad.net/glance/+spec/multiple-image-locations>
+- <https://etherpad.openstack.org/GrizzlyMultipleImageLocations>
 
 ## Image Workers
 
 Asynchronous image processing can be quite taxing to the API nodes, so Glance will provide a framework for offloading these processes to some type of worker. Glance already allows asynchronous image upload through the use of a 'copy_from' parameter, which will be the first process to be offloaded into this new framework. Two major features that have been discussed at previous design summits are image data conversion and inremental image coalescing - both of which can also be tackled once we develop this framework.
 
-- https://etherpad.openstack.org/GrizzlyImageWorkers
+- <https://etherpad.openstack.org/GrizzlyImageWorkers>
 
 ## Incremental Images
 
 In order to minimize data duplication and unnecessary network traffic, Glance will support the upload of 'incremental images.' An incremental image is a representation of the changed blocks of a disk with a link back to original image from which it was created.
 
-- https://blueprints.launchpad.net/glance/+spec/hierarchical-images
-- https://etherpad.openstack.org/GrizzlyImageHierarchy
+- <https://blueprints.launchpad.net/glance/+spec/hierarchical-images>
+- <https://etherpad.openstack.org/GrizzlyImageHierarchy>
 
 ## Image Property Protection
 
 Nova cares about several 'magic' properties of images in order to properly boot them - some of the major ones being block_device_mapping, kernel_id, ramdisk_id, instance_uuid and image_type. The problem with this is that the owner of an image can modify those properties at will, possibly rendering it un-bootable. Glance will allow trusted privileged clients such as Nova or the cloud Admin to set specific properties on images that are write- or read-protected from the image owner.
 
-- https://blueprints.launchpad.net/glance/+spec/api-v2-property-protection
+- <https://blueprints.launchpad.net/glance/+spec/api-v2-property-protection>
 
 ## OpenStack Images API v2.1
 
@@ -57,7 +57,7 @@ Images can not yet be created from an explicit backend store location - this wil
 
 Glance has suffered a bit of a mis-balance between new code and refactoring the existing code. We plan to completely overhaul the internals of Glance with a domain object model that should help re-align the codebase.
 
-- https://blueprints.launchpad.net/glance/+spec/glance-domain-logic-layer
+- <https://blueprints.launchpad.net/glance/+spec/glance-domain-logic-layer>
 
 ## glance-registry vs glance-api
 
