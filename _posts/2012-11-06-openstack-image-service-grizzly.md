@@ -12,7 +12,7 @@ An important use case of Glance up until now has been the ability to stream imag
 
 # Grizzly Planning
 
-The Glance team has a lot to tackle during the next release cycle. The major pieces have been outlined below…
+The Glance team has a lot to tackle during the next release cycle. The major pieces have been outlined below...
 
 ## Multiple Image Locations
 
